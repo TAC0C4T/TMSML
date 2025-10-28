@@ -9,7 +9,7 @@ class Network(nn.Module):
         self.net = nn.Sequential(
             nn.Linear(input_size, hidden_size),
             nn.ReLU(),
-            nn.linear(hidden_size, output_size)
+            nn.Linear(hidden_size, output_size)
         )
 
 
