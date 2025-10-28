@@ -20,7 +20,7 @@ class Network(nn.Module):
     def forward(self, x):
         return self.net(x)
         
-def train_model(file: str, input_cols: list[str], output_col: str, epochs: int = 100, lr: float = 0.01, tolerance: float = 2.0):
+def train_model(file: str, input_cols: list[str], output_col: str, epochs: int = 1000, lr: float = 0.001, tolerance: float = 2.0):
     all_cols = input_cols + [output_col]
     data = parse(file, all_cols)
     data = torch.tensor(data, dtype=torch.float32)
