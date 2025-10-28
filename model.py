@@ -4,7 +4,7 @@ import torch.optim as optim
 from parse import parse
 
 class Network(nn.Module):
-    def __init__(self, input_size: int, hidden_size: int = 32, output_size: int = 1):
+    def __init__(self, input_size: int, hidden_size: int = 6, output_size: int = 1):
         super().__init__()
         self.net = nn.Sequential(
             nn.Linear(input_size, hidden_size),
