@@ -13,7 +13,7 @@ class Network(nn.Module):
         )
 
 
-        def ff(self, x):
+        def forward(self, x):
             return self.net(x)
         
 def train_model(file: str, input_cols: list[str], output_col: str, epochs: int = 100, lr: float = 0.01, tolerance: float = 2.0):
