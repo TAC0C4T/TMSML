@@ -12,7 +12,7 @@ class Network(nn.Module):
             nn.Linear(hidden_size, hidden_size),
             nn.ReLU(),
             nn.Linear(hidden_size, hidden_size),
-            nn.Threshold(0, 1),
+            nn.Threshold(-0.055, 0.04),
             nn.Linear(hidden_size, output_size)
         )
 
@@ -20,7 +20,7 @@ class Network(nn.Module):
     def forward(self, x):
         return self.net(x)
         
-def train_model(file: str, input_cols: list[str], output_col: str, epochs: int = 1000, lr: float = 0.001, tolerance: float = 10):
+def train_model(file: str, input_cols: list[str], output_col: str, epochs: int = 1000, lr: float = 0.001, tolerance: float = 5):
     all_cols = input_cols + [output_col]
     data = parse(file, all_cols)
     data = torch.tensor(data, dtype=torch.float32)
