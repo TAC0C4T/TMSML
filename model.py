@@ -19,10 +19,6 @@ class Network(nn.Module):
             nn.ReLU(),
             nn.Linear(hidden_size, hidden_size),
             nn.ReLU(),
-            nn.Linear(input_size, hidden_size),
-            nn.ReLU(),
-            nn.Linear(hidden_size, hidden_size),
-            nn.ReLU(),
             nn.Linear(hidden_size, hidden_size),
             nn.Threshold(-0.055, 0.04),
             nn.Linear(hidden_size, output_size)
